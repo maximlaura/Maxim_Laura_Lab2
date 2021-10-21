@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Maxim_Laura_Lab2"
         mc:Ignorable="d"
-        Title="Pizzeria Colosseo" Height="535" Width="903" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}">
-    <Grid>
+        Title="Pizzeria Colosseo" Height="535" Width="903" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" Loaded="frmMain_Loaded">
+    <Grid Height="519" VerticalAlignment="Top">
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -39,9 +39,9 @@
                 <ListBox x:Name="lstSale" Height="98" Width="675" Canvas.Top="81" Canvas.Left="27"/>
                 <Label x:Name="lblTotal" Content="Total" Canvas.Left="504" Canvas.Top="201" RenderTransformOrigin="-0.14,0.785"/>
                 <TextBox x:Name="txtTotal" Canvas.Left="575" Canvas.Top="205" Text="0" TextWrapping="Wrap" Width="120" HorizontalContentAlignment="Right" IsReadOnly="True"/>
-                <Button x:Name="btnAddToSale" Content="Add to Sale" Canvas.Left="739" Canvas.Top="94"/>
-                <Button x:Name="btnRemoveItem" Content="Remove Item" Canvas.Left="730" Canvas.Top="135"/>
-                <Button x:Name="btnCheckOut" Content="CHECK OUT" Canvas.Left="721" Canvas.Top="187" Height="36" Width="87"/>
+                <Button x:Name="btnAddToSale" Content="Add to Sale" Canvas.Left="739" Canvas.Top="94" Height="24" Width="80"/>
+                <Button x:Name="btnRemoveItem" Content="Remove Item" Canvas.Left="730" Canvas.Top="135" Height="25" Width="89"/>
+                <Button x:Name="btnCheckOut" Content="CHECK OUT" Canvas.Left="732" Canvas.Top="187" Height="36" Width="87"/>
             </Canvas>
         </GroupBox>
         <Menu x:Name="mnuMain" HorizontalAlignment="Left" VerticalAlignment="Top" Width="81" Height="19">
@@ -50,13 +50,18 @@
             </MenuItem>
             <MenuItem Header="Pizza">
                 <MenuItem Header="Make">
-                    <MenuItem x:Name="margPizzaMenuItem" Header="Margherita Pizza"/>
-                    <MenuItem x:Name="pepPizzaMenuItem" Header="Pepperoni Pizza"/>
-                    <MenuItem x:Name="vegPizzaMenuItem" Header="Veggie Pizza"/>
-                    <MenuItem x:Name="quatPizzaMenuItem" Header="Quattro Stagioni Pizza"/>
-                    <MenuItem x:Name="canPizzaMenuItem" Header="Canibale Pizza"/>
+                    <MenuItem x:Name="margPizzaMenuItem" Header="Margherita Pizza" 
+                              Click="margPizzaMenuItem_Click" IsCheckable="True"/>
+                    <MenuItem x:Name="pepPizzaMenuItem" Header="Pepperoni Pizza"
+                              Click="pepPizzaMenuItem_Click" IsCheckable="True"/>
+                    <MenuItem x:Name="vegPizzaMenuItem" Header="Veggie Pizza"
+                              Click="vegPizzaMenuItem_Click" IsCheckable="True"/>
+                    <MenuItem x:Name="quatPizzaMenuItem" Header="Quattro Stagioni Pizza"
+                              Click="quatPizzaMenuItem_Click" IsCheckable="True"/>
+                    <MenuItem x:Name="canPizzaMenuItem" Header="Canibale Pizza"
+                              Click="canPizzaMenuItem_Click" IsCheckable="True"/>
                 </MenuItem>
-                <MenuItem Header="Stop"/>
+                <MenuItem Header="Stop" x:Name="mnuStop" Click="stopMenuItem_Click"/>
             </MenuItem>
         </Menu>
 

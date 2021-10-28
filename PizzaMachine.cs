@@ -10,14 +10,18 @@ namespace Maxim_Laura_Lab2
     {
         private PizzaType mIngredients;
         public PizzaType Ingredients
-        { get 
+        {
+            get
             { return mIngredients; }
-         set { mIngredients = value; } }
-        private System.Collections.ArrayList 
+            set { mIngredients = value; }
+        }
+        private System.Collections.ArrayList
             mPizzas = new System.Collections.ArrayList();
-        public Pizza this[int Index] 
-        { get { return (Pizza)mPizzas[Index]; } 
-        set { mPizzas[Index] = value; } }
+        public Pizza this[int Index]
+        {
+            get { return (Pizza)mPizzas[Index]; }
+            set { mPizzas[Index] = value; }
+        }
         public delegate void PizzaCompleteDelegate();
         public event PizzaCompleteDelegate PizzaComplete;
         DispatcherTimer pizzaBakeTimer;
@@ -67,8 +71,8 @@ namespace Maxim_Laura_Lab2
     }
         enum PizzaType
         {
-            Margherita,
-            Pepperoni,
+        Margherita,
+        Pepperoni,
             Veggie,
             Quattro_Stagioni,
             Canibale
